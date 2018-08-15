@@ -106,30 +106,6 @@ Create a Python program that finds how many prime numbers are between 1 and a nu
 
 next_exercise()
 """
-Write a Rock, Paper, Scissors game where a user can play against the computer.
-
-The user should enter rock, paper, or scissors (remember to account for differences in capitalization!), and the computer will choose a random value.
-After each turn display the score (user wins vs. computer wins).
-Whichever player reaches five wins first is the winner!
-"""
-import random
-
-print "Let's play Rock, Paper, Scissors!"
-user_play = (raw_input("One, two, three, shoot: ")).lower()
-plays = ["rock","paper","scissors"]
-prog_play = random.choice(plays)
-print "I chose " + prog_play
-
-if (prog_play == "rock" and user_play == "paper") or (prog_play == "paper" and user_play == "scissors") or (prog_play == "scissors" and user_play == "rock"):
-    print "You win!"
-elif (prog_play == "rock" and user_play == "scissors") or (prog_play == "paper" and user_play == "rock") or (prog_play == "scissors" and user_play == "paper"):
-    print "I win!"
-else:
-    print "It's a tie!"
-
-
-next_exercise()
-"""
 Fizzbuzz: Write a program that prints the numbers from 1 to 100. But for multiples of three (3) print "Fizz" instead of the number, and for the multiples of five (5) print "Buzz". For multiples of both three (3) and five (5), print "FizzBuzz".
 """
 x = 1
