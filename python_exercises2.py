@@ -112,7 +112,7 @@ if num > 1:
 else:
     print "Number must be higher than 1"
 
-print "There are " + str(amount) + " prime numbers between 2 and " + str(num)
+print "There are " + str(amount) + " prime numbers between 1 and " + str(num)
 
 
 next_exercise()
