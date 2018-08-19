@@ -28,7 +28,7 @@ for key in cos_n_caps:
         print "Wrong!"
 
 print ""
-print "You got " + str(score) + "/" + str(len(cos_n_caps))
+print "You got %d out of %d" % (score, len(cos_n_caps))
 if score > (len(cos_n_caps)/2):
     print "You're a geo-whiz!"
 else:

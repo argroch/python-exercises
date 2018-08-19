@@ -26,25 +26,25 @@ def menu(x,y):
         menu(x,y)
 
 def add(x,y):
-    print str(x) + " + " + str(y) + " = " + str(x+y)
+    print "%d + %d = %d" % (x,y,x+y)
     go_again(x,y)
 
 def subtract(x,y):
     if x > y:
-        print str(x) + " - " + str(y) + " = " + str(x-y)
+        print "%d - %d = %d" % (x,y,x-y)
     else:
-        print str(y) + " - " + str(x) + " = " + str(y-x)
+        print "%d - %d = %d" % (y,x,y-x)
     go_again(x,y)
 
 def multiply(x,y):
-    print str(x) + " x " + str(y) + " = " + str(x*y)
+    print "%d x %d = %d" % (x,y,x*y)
     go_again(x,y)
 
 def divising(x,y):
     if x % y == 0:
-        print str(x) + " / " + str(y) + " = " + str(x/y)
+        print "%d / %d = %d" % (x,y,x/y)
     else:
-        print str(x) + " / " + str(y) + " = " + str(x/y) + ", with a remainder of " + str(x%y)
+        print "%d / %d = %d, with a remainder of %d" % (x,y,x/y,x%y)
 
 def divide(x,y):
     if x > y:
@@ -58,7 +58,7 @@ def go_again(x,y):
     if choice.lower() == "y" or choice.lower() == "yes":
         os.system('clear')
         # os.system('cls') on windows
-        print "Your numbers: " + str(x) + ", " + str(y)
+        print "Your numbers: %d, %d" % (x,y)
         menu(x,y)
     else:
         print "Okay. Have a pleasant rest of your day."

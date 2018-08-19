@@ -32,11 +32,11 @@ elif score >= 60:
 else:
     print "Oh, dang! You got an F!"
 
+
 next_exercise()
 """
 Create a program that takes two numbers from the user and find out if the first is divisible by the second. If not divisible, let user know what the remainder is.
 """
-
 num1 = int(raw_input("Give me a number: "))
 num2 = int(raw_input("And another, please: "))
 
@@ -49,9 +49,10 @@ else:
 
 if x > y:
     if num1 % num2 == 0:
-        print "Divisible! " + str(x) + "/" + str(y) + " = " + str(x/y)
+        print "Divisible! %d / %d = %d" % (x,y,x/y)
     else:
-        print "Not divisible! " + str(x) + "/" + str(y) + " = " + str(x/y) + " with a remainder of " + str(x%y)
+        print "Not divisible! %d / %d = %d, with a remainder of %d" % (x,y,x/y, x%y)
+
 
 next_exercise()
 """
@@ -100,22 +101,22 @@ next_exercise()
 """
 Create a Python program that finds how many prime numbers are between 1 and a number given by the user.
 """
-num = int(raw_input("Give me a number: "))
-amount = 1
-if num > 1:
-    for x in range(2, num+1):
-        for y in range(2, x):
-            if x % y == 0:
-                break
-            else:
-                amount += 1
-else:
-    print "Number must be higher than 1"
+# num = int(raw_input("Give me a number: "))
+# amount = 1
+# if num > 1:
+#     for x in range(2, num+1):
+#         for y in range(2, x):
+#             if x % y == 0:
+#                 break
+#             else:
+#                 amount += 1
+# else:
+#     print "Number must be higher than 1"
+#
+# print "There are %d prime numbers between 1 and %d" % (amount, num)
 
-print "There are " + str(amount) + " prime numbers between 1 and " + str(num)
 
-
-next_exercise()
+# next_exercise()
 """
 Fizzbuzz: Write a program that prints the numbers from 1 to 100. But for multiples of three (3) print "Fizz" instead of the number, and for the multiples of five (5) print "Buzz". For multiples of both three (3) and five (5), print "FizzBuzz".
 """
@@ -153,4 +154,4 @@ total = 0
 for score in scores:
     total += score
 
-print "The average score is: "+ str(total / len(scores))
+print "The average score is: %d" % (total/len(scores))

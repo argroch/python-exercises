@@ -27,9 +27,9 @@ def zero_check(num):
 
 def divising(x,y):
     if x % y == 0:
-        print "Divisible! " + str(x) + " / " + str(y) + " = " + str(x/y)
+        print "Divisible! %d / %d = %d" % (x,y,x/y)
     else:
-        print "Not divisible. "+ str(x) + " / " + str(y) + " = " + str(x/y) + ", with a remainder of " + str(x%y)
+        print "Not divisible. %d / %d = %d, with a remainder of %d" % (x,y,x/y,x%y)
 
 num1 = get_number()
 num2 = get_number()

@@ -21,7 +21,7 @@ next_exercise()
 Write a program that asks for your mood for the day, then returns the length of the string. Then return the string with 'meow' prepended to it.
 """
 mood = raw_input("How do you feel today? ")
-print "That mood is " + str(len(mood)) + " letters long."
+print "That mood is %d letters long." % (len(mood))
 print mood + "meow"
 
 
@@ -29,38 +29,35 @@ next_exercise()
 """
 Write a program that takes two numbers from the user and shows the sum, difference, product and quotient of the two numbers.
 """
-num1 = raw_input("Give me a number: ")
-num2 = raw_input("Okay, and another: ")
+num1 = int(raw_input("Give me a number: "))
+num2 = int(raw_input("Okay, and another: "))
 
-int1 = int(num1)
-int2 = int(num2)
-
-print "The sum of " + num1 + " and " + num2 + " is " + str(int1 + int2)
-print "The difference between " + num1 + " and " + num2 + " is " + str(abs(int1 - int2))
-print "The product of " + num1 + " and " + num2 + " is " + str(int1 * int2)
-if int1 > int2:
-    print "The quotient of " + num1 + " and " + num2 + " is " + str(int1 / int2)
+print "The sum of %d and %d is %d" % (num1, num2, num1+num2)
+print "The difference between %d and %d is %d" % (num1, num2, abs(num1 - num2))
+print "The product of %d and %d is %d" % (num1, num2, num1*num2)
+if num1 > num2:
+    print "The quotient of %d and %d is %d" % (num1, num2, num1/num2)
 else:
-    print "The quotient of " + num2 + " and " + num1 + " is " + str(int2 / int1)
+    print "The quotient of %d and %d is %d" % (num2, num1, num2/num1)
 
 
+next_exercise()
 """
 Write a program that asks for a sentence. Then ask for their favorite word in that sentence. Then tell them what index that word starts at.
 """
 sen = raw_input("Give me a sentence: ")
 word = raw_input("Okay, now what is your favorite word in that sentence? ")
 
-print "Hmm... looks like that word is at " + str((sen.find(" " + word)) + 1) + " index."
+print "Hmm... looks like that word is at %d index" % (sen.find(" " + word) + 1)
 
 
 next_exercise()
 """
 Write a program that asks for the cost of your dinner at a restaurant. The program will return back to you a tip of 18% of your meal cost. Make sure the tip is always returned with two decimal places.
 """
-cost = raw_input("How much does the bill come to? ")
-cost = float(cost)
+cost = float(raw_input("How much does the bill come to? "))
 tip = cost * 0.18
-print "Okay, tip should be $" + str("%.2f" % tip)
+print "Okay, tip should be $%s" % str(("%.2f" % tip))
 
 
 next_exercise()
@@ -70,15 +67,15 @@ Write a program that accpets your age. Convert your age to how old you are in se
 age = raw_input("What is your age? ")
 age_in_days = float(age) * 365
 
-print "Whoa, you are " + str(age_in_days * 86400) + " seconds old!"
-print "On Mercury, you'd be " + str("%.2f" % (age_in_days/87.97)) + " years old."
-print "On Venus, you'd be " + str("%.2f" % (age_in_days/224.7)) + " years old."
-print "On Mars, you'd be " + str("%.2f" % (float(age)/1.8808476)) + " years old."
-print "On Juptier, you'd be " + str("%.2f" % (float(age)/11.862615)) + " years old."
-print "On Saturn, you'd be " + str("%.2f" % (float(age)/29.447498)) + " years old."
-print "On Neptune, you'd be " + str("%.2f" % (float(age)/84.016846)) + " years old."
-print "On Uranus, you'd be " + str("%.2f" % (float(age)/164.79132)) + " years old."
-print "On Pluto, you'd be " + str("%.2f" % (float(age)/247.92065)) + " years old. And, yes, I still consider Pluto a planet."
+print "Whoa, you are %d seconds old!" % (age_in_days * 86400)
+print "On Mercury, you'd be %s years old." % str("%.2f" % (age_in_days/87.97))
+print "On Venus, you'd be %s years old." % str("%.2f" % (age_in_days/224.7))
+print "On Mars, you'd be %s years old." % str("%.2f" % (float(age)/1.8808476))
+print "On Juptier, you'd be %s years old." % str("%.2f" % (float(age)/11.862615))
+print "On Saturn, you'd be %s years old." % str("%.2f" % (float(age)/29.447498))
+print "On Neptune, you'd be %s years old." % str("%.2f" % (float(age)/84.016846))
+print "On Uranus, you'd be %s years old." % str("%.2f" % (float(age)/164.79132))
+print "On Pluto, you'd be %s years old. And, yes, I still consider Pluto a planet." % str("%.2f" % (float(age)/247.92065))
 
 
 next_exercise()
@@ -105,4 +102,4 @@ thing = raw_input("Give me noun/thing: ")
 
 print "Okay, here's our story:"
 time.sleep(4)
-print name1.capitalize() + " " + verb1 + " near a whole bunch of " + plural_noun + ". He couldn't believe his " + body_part + "! '" + exclamation1.capitalize() + "! Just what I was looking for,' he " + verb2 + ". 'These will help me " + adverb + ".' But at the same time, " + name2 + " " + verb3 + " the same thing and was also very " + feeling + ". The two of them " + verb4 + " at each other and said, '" + exclamation2.capitalize() + "! Get your hands off my " + thing + "!'"
+print "%s %s near a whole bunch of %s. He couldn't believe his %s! '%s! Just what I was looking for,' he %s. 'These will help me %s.' But at the same time, %s %s the same thing and was also very %s. The two of them %s at each other and said, '%s! Get your hands off my %s!'" % (name1.capitalize(), verb1, plural_noun, body_part, exclamation1.capitalize(), verb2, adverb, name2, verb3, feeling, verb4, exclamation2.capitalize(), thing)
