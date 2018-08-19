@@ -21,13 +21,13 @@ score = int(raw_input("What score did you get on the test? "))
 
 if score > 100:
     print "That's not true. That's impossible!"
-elif score <= 100 and score >= 90:
+elif score >= 90:
     print "You got an A!"
-elif score <= 89 and score >= 80:
+elif score >= 80:
     print "You got a B!"
-elif score <= 79 and score >= 70:
+elif score >= 70:
     print "You got a C."
-elif score <= 69 and score >= 60:
+elif score >= 60:
     print "You got a D. Not great."
 else:
     print "Oh, dang! You got an F!"
