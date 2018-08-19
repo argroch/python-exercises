@@ -101,6 +101,7 @@ next_exercise()
 """
 Create a Python program that finds how many prime numbers are between 1 and a number given by the user.
 """
+# I was not paying attention to the output. Something is wrong here...
 # num = int(raw_input("Give me a number: "))
 # amount = 1
 # if num > 1:
