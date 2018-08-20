@@ -50,11 +50,13 @@ def menu():
 # enter a team
 def enter_teams():
     clear_screen()
+    print "Enter a new team:"
     name = raw_input("What is the team name? ")
     rank = int(raw_input("Where are they on the ranking? "))
 
     team = Team(name, rank)
-    teams.insert(team.rank-1, team)
+    teams.append(team)
+    teams.sort(key=lambda x: x.rank)
 
     print """What next?
     1. Enter Another Team
@@ -70,6 +72,7 @@ def enter_teams():
 # list the teams
 def list_teams():
     clear_screen()
+    print "The teams are:"
     for team in teams:
         print "%d. %s" % (team.rank, team.name)
     ready = raw_input("When ready to go back to the menu, hit enter!")
@@ -78,8 +81,25 @@ def list_teams():
 # list the matchups
 def list_matchups():
     clear_screen()
-    print "List matchups"
-    #something here
+
+    temp_teams = []
+    for team in teams:
+        temp_teams.append(team)
+
+    print "Matchups:"
+
+    if len(teams)%2 == 0:
+        count = 0
+        while count < len(temp_teams):
+            print "(%d) %s versus (%d) %s" % (temp_teams[count].rank, temp_teams[count].name, temp_teams[-1].rank, temp_teams[-1].name)
+            temp_teams.pop(-1)
+            count += 1
+    else:
+        print "odd amount of teams"
+
+    print ""
+    ready = raw_input("When ready to go back to the menu, hit enter!")
+    menu()
 
 class Team:
     def __init__(self, name, rank):

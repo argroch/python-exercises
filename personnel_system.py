@@ -10,3 +10,5 @@ Let's assume our company has multiple locations. For an extra method, create one
 
 The program will allow the user to create a new employee record, view and modify an existing record.
 """
+import os
+import time
