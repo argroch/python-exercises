@@ -101,23 +101,24 @@ next_exercise()
 """
 Create a Python program that finds how many prime numbers are between 1 and a number given by the user.
 """
-# I was not paying attention to the output. Something is wrong here...
-# num = int(raw_input("Give me a number: "))
-# amount = 1
-# if num > 1:
-#     for x in range(2, num+1):
-#         for y in range(2, x):
-#             if x % y == 0:
-#                 break
-#             else:
-#                 amount += 1
-# else:
-#     print "Number must be higher than 1"
-#
-# print "There are %d prime numbers between 1 and %d" % (amount, num)
+user_num = int(input("Give me a number: "))
+
+amount = 0
+
+if user_num > 1:
+    for x in range(2,user_num + 1):
+       for i in range(2,x):
+           if x%i == 0:
+               break
+       else:
+           amount += 1
+else:
+    print "Number must be higher than 1"
+
+print "There are %d prime numbers between 1 and %d" % (amount, user_num)
 
 
-# next_exercise()
+next_exercise()
 """
 Fizzbuzz: Write a program that prints the numbers from 1 to 100. But for multiples of three (3) print "Fizz" instead of the number, and for the multiples of five (5) print "Buzz". For multiples of both three (3) and five (5), print "FizzBuzz".
 """
