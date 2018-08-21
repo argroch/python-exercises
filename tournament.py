@@ -1,20 +1,13 @@
 """
 Help match up teams for the first round in a seed-based tournament. In a seeded tournament, and during the first round, the top seed is matched with the bottom seed, the 2nd highest team is matched with the second lowest, etc.
-
-Matchups:
-(1) Wisconsin versus (4) Indiana,
-(2) Michigan versus (3) Michigan State
-
-If an odd number of teams are entered, the top-seeded team gets a bye (doesn't play)
-
-Example:
-Matchups:
-(1) Wisconsin has a bye
-(2) Michigan versus (5) Purdue
-(3) Michigan State versus (4) Indiana
 """
 import os
 import time
+
+class Team:
+    def __init__(self, name, rank):
+        self.name = name
+        self.rank = rank
 
 teams = []
 
@@ -55,6 +48,9 @@ def enter_teams():
     rank = int(raw_input("Where are they on the ranking? "))
 
     team = Team(name, rank)
+    # okay, I'd like to have a check on if a team is a duplicate,
+    # either in name or rank (i.e., two teams cannot have the same
+    # name or the same rank)
     teams.append(team)
     teams.sort(key=lambda x: x.rank)
 
@@ -88,22 +84,18 @@ def list_matchups():
 
     print "Matchups:"
 
-    if len(teams)%2 == 0:
-        count = 0
-        while count < len(temp_teams):
-            print "(%d) %s versus (%d) %s" % (temp_teams[count].rank, temp_teams[count].name, temp_teams[-1].rank, temp_teams[-1].name)
-            temp_teams.pop(-1)
-            count += 1
-    else:
-        print "odd amount of teams"
+    if len(teams)%2 != 0:
+        print "(%d) %s has a bye" % (teams[0].rank, teams[0].name)
+        temp_teams.pop(0)
+
+    count = 0
+    while count < len(temp_teams):
+        print "(%d) %s versus (%d) %s" % (temp_teams[count].rank, temp_teams[count].name, temp_teams[-1].rank, temp_teams[-1].name)
+        temp_teams.pop(-1)
+        count += 1
 
     print ""
     ready = raw_input("When ready to go back to the menu, hit enter!")
     menu()
-
-class Team:
-    def __init__(self, name, rank):
-        self.name = name
-        self.rank = rank
 
 menu()
