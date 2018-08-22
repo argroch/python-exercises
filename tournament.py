@@ -47,23 +47,37 @@ def enter_teams():
     name = raw_input("What is the team name? ")
     rank = int(raw_input("Where are they on the ranking? "))
 
-    team = Team(name, rank)
+    new_team = Team(name, rank)
     # okay, I'd like to have a check on if a team is a duplicate,
     # either in name or rank (i.e., two teams cannot have the same
     # name or the same rank)
-    teams.append(team)
-    teams.sort(key=lambda x: x.rank)
+    exists = False
+    for team in teams:
+        if new_team.name == team.name:
+            exists = True
+        elif new_team.rank == team.rank:
+            exists = True
 
-    print """What next?
-    1. Enter Another Team
-    2. Back to Main Menu
-    """
+    if exists == False:
+        # team or rank is not already in the list, so put it in!
+        teams.append(new_team)
+        teams.sort(key=lambda x: x.rank)
 
-    choice = int(raw_input())
-    if choice == 1:
-        enter_teams()
+        print """What next?
+        1. Enter Another Team
+        2. Back to Main Menu
+        """
+
+        choice = int(raw_input())
+        if choice == 1:
+            enter_teams()
+        else:
+            menu()
     else:
-        menu()
+        # oh, dang, this team or rank has already been entered
+        print "This team has already been entered, or another team has that rank. Please check the list of teams before entering more teams."
+        time.sleep(2)
+        list_teams()
 
 # list the teams
 def list_teams():
