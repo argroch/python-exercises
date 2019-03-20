@@ -1,25 +1,10 @@
-from operator import itemgetter
+# just a place to try things out
+dict = {"Francis":40, "Maria":49, "Lucy":33}
 
-class Team:
-    def __init__(self, name, rank):
-        self.name = name
-        self.rank = rank
+friend = raw_input("Who is your friend? ")
 
-teams = []
+for key in dict:
+    if friend == key:
+        enemy = key
 
-count = 0
-
-team1 = Team("France",2)
-teams.append(team1)
-team2 = Team("Netherlands",4)
-teams.append(team2)
-team3 = Team("England",1)
-teams.append(team3)
-team4 = Team("Germany",3)
-teams.append(team4)
-
-# sorted(teams,key=itemgetter(x.rank))
-teams.sort(key=lambda x: x.rank)
-
-for team in teams:
-    print "%d. %s" % (team.rank, team.name)
+print enemy

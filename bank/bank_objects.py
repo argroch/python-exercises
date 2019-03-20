@@ -1,4 +1,4 @@
-class Account:
+class Account(object):
     def __init__(self, customer, acct_type, balance):
         self.customer = customer
         self.acct_type = acct_type
@@ -18,7 +18,7 @@ class Account:
             amount = float(raw_input("$"))
             self.balance -= amount
 
-class Customer:
+class Customer(object):
     def __init__(self, name, pin):
         self.name = name
         self.pin = pin

@@ -39,7 +39,20 @@ def log_in():
     print "Please provide the following information:"
     name = raw_input("Name on Account: ")
     pin = int(raw_input("Enter your PIN: "))
-    # check to see if customer has multiple accounts
+    # does name and PIN check out?
+    customer_found = False
+    for customer in customers:
+        if customer.name == name and customer.pin == pin:
+            cust = customer
+            customer_found = True
+
+    if customer_found == False:
+        clear_screen()
+        print "Incorrect information given. Please try again."
+        log_in()
+    else:
+        # check to see if customer has multiple accounts
+        
     # if just one account, continue with that
     # else, allow them to choose
 
