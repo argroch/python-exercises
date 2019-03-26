@@ -19,9 +19,13 @@ class Account(object):
             self.balance -= amount
 
 class Customer(object):
-    def __init__(self, name, pin):
-        self.name = name
+    def __init__(self, firstname, lastname, pin):
+        self.firstname = firstname
+        self.lastname = lastname
         self.pin = pin
+
+    def fullname(self):
+        return "%s %s" % (self.firstname, self.lastname)
 
     def change_pin(self, pin):
         new_pin = raw_input("Enter a new four-digit pin: ")
