@@ -41,12 +41,21 @@ def factorial():
 
 def sine():
 	global equation
+	result = str(math.sin(int(equation)))
+	input_text.set(result)
+	equation = result
 
 def cosine():
 	global equation
+	result = str(math.cos(int(equation)))
+	input_text.set(result)
+	equation = result
 
 def tangent():
 	global equation
+	result = str(math.tan(int(equation)))
+	input_text.set(result)
+	equation = result
 
 equation = ""
 input_text = StringVar()
@@ -63,6 +72,7 @@ btn_space.pack()
 clear = Button(btn_space, text = "AC", fg = "black", command = lambda: clear_all()).grid(row = 0, column = 0)
 sqrt = Button(btn_space, text = "sqrt", fg = "black", command = lambda: square_root()).grid(row = 0, column = 1)
 exponent = Button(btn_space, text = "x^y", fg = "black", command = lambda: btn_click("**")).grid(row = 0, column = 2)
+bang = Button(btn_space, text = "!", fg = "black", command = lambda: factorial()).grid(row = 0, column = 3)
 
 seven = Button(btn_space, text = "7", fg = "black", command = lambda: btn_click(7)).grid(row = 1, column = 0)
 eight = Button(btn_space, text = "8", fg = "black", command = lambda: btn_click(8)).grid(row = 1, column = 1)
@@ -83,8 +93,11 @@ subtract = Button(btn_space, text = "-", fg = "black", command = lambda: btn_cli
 zero = Button(btn_space, text = "0", fg = "black", command = lambda: btn_click(0)).grid(row = 4, column = 0)
 point = Button(btn_space, text = ".", fg = "black", command = lambda: btn_click(".")).grid(row = 4, column = 1)
 add = Button(btn_space, text = "+", fg = "black", command = lambda: btn_click("+")).grid(row = 4, column = 2)
-equal = Button(btn_space, text = "=", fg = "black", command = lambda: btn_equal()).grid(row = 4, column = 3)
+equal = Button(btn_space, text = "=", fg = "white", bg = "blue", command = lambda: btn_equal()).grid(row = 4, column = 3)
 
-
+sin = Button(btn_space, text = "sin", fg = "black", command = lambda: sine()).grid(row = 5, column = 0)
+cos = Button(btn_space, text = "cos", fg = "black", command = lambda: cosine()).grid(row = 5, column = 1)
+tan = Button(btn_space, text = "tan", fg = "black", command = lambda: tangent()).grid(row = 5, column = 2)
+end = Button(btn_space, text = "end", fg = "white", bg = "red", command = window.destroy).grid(row = 5, column = 3)
 
 window.mainloop()
