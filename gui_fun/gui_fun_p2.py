@@ -1,32 +1,19 @@
 from Tkinter import *
+import time
 
-# root = Tk()
+class App():
+	global start = time.time()
+  def __init__(self):
+    self.root = Tk()
+    self.root.geometry("100x100")
+    self.label = Label(text="")
+    self.label.pack()
+    self.update_clock()
+    self.root.mainloop()
 
-# root = mainloop()
+  def update_clock(self):
+    now = time.strftime("%H:%M:%S")
+    self.label.configure(text=now)
+    self.root.after(1000, self.update_clock)
 
-# window = Tk()
-# window.title("GUI fun")
-# label = Label(window, text = "Hello World!").pack()
-# window.mainloop()
-
-
-window = Tk()
-window.title("GUI")
-
-# creating 2 frames TOP and BOTTOM
-# top_frame = Frame(window).pack()
-# bottom_frame = Frame(window).pack(side = "bottom")
-
-# # now, create some widgets in the top_frame and bottom_frame
-# btn1 = Button(top_frame, text = "Button1", fg = "red").pack()# 'fg - foreground' is used to color the contents
-# btn2 = Button(top_frame, text = "Button2", fg = "green").pack()# 'text' is used to write the text on the Button
-# btn3 = Button(bottom_frame, text = "Button2", fg = "purple").pack(side = "left")# 'side' is used to align the widgets
-# btn4 = Button(bottom_frame, text = "Button2", fg = "orange").pack(side = "left")
-
-# window.mainloop()
-def say_hi():
-	Label(window, text = "Hi").pack()
-
-Button(window, text = "Click Me!", command = say_hi).pack() # 'command' is executed when you click the button
-
-window.mainloop()
+app=App()
